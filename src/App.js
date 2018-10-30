@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import LoginForm from './components/loginForm';
 
 const Index = () => <h2>Home</h2>;
-const Test2 = () => <h2>test</h2>;
 const Header=()=>(
     <nav>
         <ul>
@@ -11,7 +11,7 @@ const Header=()=>(
                 <a href='/'>Home</a>
             </li>
             <li>
-                <a href='/test/'>Test</a>
+                <a href='/login/'>Login</a>
             </li>
 
         </ul>
@@ -24,8 +24,7 @@ class App extends Component {
       <Router>
           <div>
           <Route path="/" exact component={Index} />
-          <Route path="/test" exact component={Test2} />
-          <Header/>
+          <Route path="/login" exact component={LoginForm} />
           </div>
       </Router>
     );
