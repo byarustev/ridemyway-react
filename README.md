@@ -1,6 +1,6 @@
-[![Build Status](https://www.travis-ci.org/byarustev/awesome_react_app.svg?branch=develop)](https://www.travis-ci.org/byarustev/awesome_react_app)
-[![Maintainability](https://api.codeclimate.com/v1/badges/f5d0f631a50bfffd4634/maintainability)](https://codeclimate.com/github/byarustev/awesome_react_app/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/f5d0f631a50bfffd4634/test_coverage)](https://codeclimate.com/github/byarustev/awesome_react_app/test_coverage)
+[![Build Status](https://www.travis-ci.org/byarustev/ridemyway-react.svg?branch=develop)](https://www.travis-ci.org/byarustev/ridemyway-react)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c87fdf76306a5aebd51a/maintainability)](https://codeclimate.com/github/byarustev/ridemyway-react/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c87fdf76306a5aebd51a/test_coverage)](https://codeclimate.com/github/byarustev/ridemyway-react/test_coverage)
 
 # Ride-my-way Frontend (React)
 Ride-my-way is a car pooling application that enables users to share rides. 
