@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SignupForm from '../components/signupForm';
-
+import history from '../history'
 class SignUp extends Component {
     render() {
         return (
@@ -22,7 +22,7 @@ class SignUp extends Component {
                         </div>
                     </div>
                 </div>
-                <SignupForm/>
+                <SignupForm history={history}/>
             </div>
         );
     }

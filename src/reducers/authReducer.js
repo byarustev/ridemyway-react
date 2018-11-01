@@ -1,4 +1,4 @@
-import {LOGIN_USER, FETCHING, LOGIN_ERROR, LOG_STATUS} from "../actions/types";
+import {LOGIN_USER, FETCHING, LOGIN_ERROR, LOG_STATUS, SIGNUP_ERROR} from "../actions/types";
 
 const initialState = {
     user: {},
@@ -7,7 +7,7 @@ const initialState = {
     isFetching: false,
 };
 
-const loginReducer = (state = initialState, action) =>{
+const authReducer = (state = initialState, action) =>{
     switch (action.type) {
         case LOGIN_USER:
             return {
@@ -27,6 +27,12 @@ const loginReducer = (state = initialState, action) =>{
                 loginError: action.payload,
             };
 
+        case SIGNUP_ERROR:
+            return {
+                ...state,
+                signUpError: action.payload,
+            };
+
         case LOG_STATUS:
             return {
                 ...state,
@@ -38,4 +44,4 @@ const loginReducer = (state = initialState, action) =>{
     }
 };
 
-export default loginReducer;
+export default authReducer;

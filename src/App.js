@@ -7,6 +7,7 @@ import Home from "./containers/home";
 import Trips from "./containers/trips";
 import Profile from "./containers/profile";
 import Friends from "./containers/friends";
+import history from './history';
 
 const Header=()=>(
     <header>
@@ -26,18 +27,19 @@ const Header=()=>(
     </header>
 );
 
-class App extends Component {
+class App extends Component{
+
   render() {
     return (
-      <Router>
+      <Router history={history}>
           <div>
-          <Header/>
+          <Header />
           <Route path="/" exact component={Home} />
-          <Route path="/login" exact component={LoginForm} />
-          <Route path="/sign-up" exact component={SignUp} />
-          <Route path="/trips" exact component={Trips} />
-          <Route path="/profile" exact component={Profile} />
-          <Route path="/friends" exact component={Friends} />
+          <Route path="/login"  component={LoginForm} />
+          <Route path="/sign-up"  component={SignUp} />
+          <Route path="/trips"  component={Trips} />
+          <Route path="/profile"  component={Profile} />
+          <Route path="/friends"  component={Friends} />
           </div>
       </Router>
     );

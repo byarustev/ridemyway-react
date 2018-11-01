@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {handleLogin} from '../actions/login'
+import {handleLogin} from '../actions/auth'
 
 class LoginForm extends Component {
 
@@ -99,10 +99,10 @@ LoginForm.propTypes = {
 
 const mapStateToProps = (state) => {
     return{
-        user:state.login.user,
-        fetchStatus: state.login.isFetching,
-        loginError:state.login.loginError,
-        isLogged:state.login.isLogged,
+        user:state.auth.user,
+        fetchStatus: state.auth.isFetching,
+        loginError:state.auth.loginError,
+        isLogged:state.auth.isLogged,
     }
 };
 
