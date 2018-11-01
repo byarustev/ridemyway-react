@@ -188,7 +188,7 @@ li{
 header .header-logo{
   font-size: 24px;
   font-weight: 900;
-  color:#10ac84;
+  color:white;
   text-transform: uppercase;
   display: block;
   margin:0 auto;
@@ -211,11 +211,6 @@ header nav ul li{
 
 }
 
-header nav ul li a {
-  font-size: 16px;
-  color:#111;
-  text-transform: uppercase;
-}
 
 header .header-right{
   display: none;
@@ -687,13 +682,9 @@ input[type="submit"]{
     line-height: 40px;
     margin: 20px 0 0 10px;
     float: left;
+
   }
 
-  header nav ul li a {
-    font-size: 16px;
-    line-height: 40px;
-    color:#111;
-  }
 
   header .header-right{
     display: block;
@@ -720,7 +711,6 @@ input[type="submit"]{
     margin-top: 20px;
     border-radius: 3px;
     padding:0 20px;
-    color:#2f3640;
   }
 
 }
@@ -807,11 +797,6 @@ input[type="submit"]{
     display: block;
   }
 
-  header nav ul li a {
-    font-size: 16px;
-    line-height: 40px;
-    color:#111;
-  }
 
   header .header-right{
     display: block;

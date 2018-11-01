@@ -9,7 +9,8 @@ let settings = {
 if (localStorage.getItem('auth_token')) {
     settings = {
         baseURL: API_HOST,
-        headers: { Authorization: localStorage.getItem('auth_token') }
+        headers: { Authorization:`Bearer ${localStorage.getItem('auth_token')}`
+        }
     };
 }
 

@@ -12,7 +12,7 @@ import history from './history';
 const Header=()=>(
     <header>
         <a href="/" className="header-logo">Ride My Way</a>
-        <nav>
+        <nav className="blue darken-3">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/trips">My Trips</a></li>

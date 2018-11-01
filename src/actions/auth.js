@@ -1,7 +1,7 @@
 import {axiosInstance} from '../globals'
 import {FETCHING, LOG_STATUS, LOGIN_ERROR, LOGIN_USER, SIGNUP_ERROR} from "./types";
 
-const setFetching=(payload)=>{
+export const setFetching=(payload)=>{
     return {
         type:FETCHING,
         payload
@@ -45,7 +45,7 @@ export const handleLogin = userData => async (dispatch) => {
         .then((response) => {
             dispatch(setLoggedUser({username:response.data.user_name}));
             localStorage.setItem('currentUser', response.data.users_name);
-            localStorage.setItem('tokensetSignUpError', response.data.auth_token);
+            localStorage.setItem('auth_token', response.data.auth_token);
             dispatch(setLogStatus(true));
             dispatch(setFetching(false));
             dispatch(setLoginError(""));
@@ -65,7 +65,7 @@ export const handleSignUp = userData => async (dispatch)=>{
         .then(response=>{
             dispatch(setLoggedUser({username:response.data.user_name}));
             localStorage.setItem('currentUser', response.data.users_name);
-            localStorage.setItem('tokensetSignUpError', response.data.auth_token);
+            localStorage.setItem('auth_token', response.data.auth_token);
             dispatch(setLogStatus(true));
             dispatch(setFetching(false));
             dispatch(setSignUpError(""));
