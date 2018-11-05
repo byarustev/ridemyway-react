@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {handleLogin} from '../actions/auth'
 
-class LoginForm extends Component {
+export class LoginForm extends Component {
 
     constructor(props){
         super(props);
@@ -78,7 +78,7 @@ class LoginForm extends Component {
                             <input className='form-input' onChange={e=>this.handleChange(e)} type='Password' name='password' id='password' />
                         </div>
                         <div className='input-group'>
-                            <input className='button blue login_btn' onClick={e=>this.handleSubmit(e)} type='submit' name='submit_login' value='LOGIN'/>
+                            <input className='button blue login_btn' onClick={e=>this.handleSubmit(e)} type='submit' name='submit_login' id="submit_login" value='LOGIN'/>
                         </div>
                     </form>
                     <div className='input-group'>

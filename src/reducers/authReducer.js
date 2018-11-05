@@ -1,6 +1,6 @@
 import {LOGIN_USER, FETCHING, LOGIN_ERROR, LOG_STATUS, SIGNUP_ERROR} from "../actions/types";
 
-const initialState = {
+export const initialState = {
     user: {},
     loginError:"",
     isLogged:false,

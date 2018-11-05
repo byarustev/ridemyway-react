@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {handleSignUp} from "../actions/auth";
 
-class SignUpForm extends Component {
+export class SignUpForm extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -120,7 +120,7 @@ class SignUpForm extends Component {
 
                     </div>
                     <div className="input-group">
-                        <input type="submit" className="button blue" name="signup" value="SIGNUP" />
+                        <input type="submit" id="submit-button" onClick={e=>this.handleSubmit(e)} className="button blue" name="signup" value="SIGNUP" />
                     </div>
                 </form>
                 <div className="input-group">

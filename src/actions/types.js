@@ -8,3 +8,4 @@ export const FETCH_RIDE='fetch_ride';
 export const FETCH_RIDES='fetch_rides';
 export const FETCH_RIDE_ERROR='fetch_ride_error';
 export const CREATE_RIDE_ERROR='create_ride_error';
+export const REQUEST_JOIN='request_join';

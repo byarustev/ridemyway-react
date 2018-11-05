@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import MockAdapter from 'axios-mock-adapter';
 import {axiosInstance} from '../../globals';
-import {handleSignUp, handleLogin} from '../auth'
+import {handleSignUp, handleLogin} from '../auth';
 import {FETCHING, LOG_STATUS, LOGIN_ERROR, LOGIN_USER, SIGNUP_ERROR} from "../types";
 
 describe('test authentication',()=> {

@@ -1,11 +1,20 @@
-import {CREATE_RIDE, CREATE_RIDE_ERROR, FETCH_RIDE_ERROR, FETCH_RIDES, FETCH_RIDE, FETCHING} from "../actions/types";
+import {
+    CREATE_RIDE,
+    CREATE_RIDE_ERROR,
+    FETCH_RIDE_ERROR,
+    FETCH_RIDES,
+    FETCH_RIDE,
+    FETCHING,
+    REQUEST_JOIN
+} from "../actions/types";
 
-const initialState = {
-    rides: {},
+export const initialState = {
+    rides: [],
     rideCreated:false,
     fetchError:"",
     createError:"",
     isFetching: false,
+    setJoin:false,
 };
 
 const ridesReducer=(state=initialState,action)=>{
@@ -44,6 +53,12 @@ const ridesReducer=(state=initialState,action)=>{
             return {
                 ...state,
                 ride:action.payload,
+            };
+
+        case REQUEST_JOIN:
+            return {
+                ...state,
+                setJoin:action.payload
             };
 
         default:

@@ -1,6 +1,6 @@
 import {axiosInstance} from "../globals";
 import {setFetching} from "./auth";
-import {CREATE_RIDE, CREATE_RIDE_ERROR} from "./types";
+import {CREATE_RIDE, CREATE_RIDE_ERROR, FETCH_RIDES, REQUEST_JOIN} from "./types";
 
 const setRideCreated=(payload)=>{
     return{
@@ -37,16 +37,47 @@ export const createRide=(rideData)=>async (dispatch)=>{
 };
 
 
+const setRides=(payload)=>{
+    return {
+        type:FETCH_RIDES,
+        payload
+    }
+};
 export const fetchRides=()=>async (dispatch)=>{
     dispatch(setFetching(true));
     return await axiosInstance
         .get('rides')
         .then(response=>{
             console.log('rides =>',response.data);
+            dispatch(setRides(response.data.rides));
             dispatch(setFetching(false));
         })
         .catch(error=>{
 
             dispatch(setFetching(false));
         })
+};
+
+const setHasRequested=(payload)=>{
+    return {
+        type:REQUEST_JOIN,
+        payload
+    }
+};
+
+export const UnsetHasRequested=()=>(dispatch)=>{
+    dispatch(setHasRequested(false));
+};
+
+export const requestRideJoin=(rideId)=>async (dispatch)=>{
+   dispatch(setFetching(true));
+   return await axiosInstance
+       .post(`rides/${rideId}/requests`)
+       .then(response=>{
+           dispatch(setHasRequested(true));
+           dispatch(setFetching(false));
+       })
+       .catch(error=>{
+           dispatch(setFetching(false));
+       })
 };

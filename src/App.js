@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Router, Route} from 'react-router-dom';
 import LoginForm from './components/loginForm';
 import SignUp from "./containers/signup";
 import Home from "./containers/home";
@@ -9,7 +9,7 @@ import Profile from "./containers/profile";
 import Friends from "./containers/friends";
 import history from './history';
 
-const Header=()=>(
+export const Header=()=>(
     <header>
         <a href="/" className="header-logo">Ride My Way</a>
         <nav className="blue darken-3">
@@ -21,7 +21,7 @@ const Header=()=>(
                 <li><a href="/profile">Profile</a></li>
             </ul>
             <a href="!#" className="header-right button green white-text" onClick="show_post_form()">New Ride</a>
-            <a href="!#" className="header-right2" onClick="log_out()"><span id="logged_user"/> (Log Out)</a>
+            <a href="!#" className="header-right2" onClick="log_out()"><span id="logged_user"/>{localStorage.getItem('currentUser')} (Log Out)</a>
         </nav>
 
     </header>

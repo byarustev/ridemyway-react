@@ -1,10 +1,27 @@
 import React from 'react';
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../App';
+import App, {Header} from '../App';
+import {Provider} from 'react-redux';
+import store from "../store";
+
 Enzyme.configure({adapter:new Adapter()});
 
+describe('test app',()=>{
+    it('renders without crashing', () => {
+        mount(
+            <Provider store={store}>
+            <App/>
+            </Provider>
+        );
+    });
 
-it('renders without crashing', () => {
-  shallow(<App />);
-});
+    it('header renders without crashing', () => {
+        mount(
+            <Header/>
+        );
+    });
+
+})
+
+
