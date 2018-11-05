@@ -4,7 +4,7 @@ class Spinner extends Component {
     render() {
         return (
             <div className="preloader-wrapper active">
-                <div className="spinner-layer spinner-red-only">
+                <div className="spinner-layer spinner-blue">
                     <div className="circle-clipper left">
                         <div className="circle"/>
                     </div>

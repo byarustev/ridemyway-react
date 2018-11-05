@@ -8,6 +8,7 @@ import { createRide,
 import M from "materialize-css";
 import PropTypes from 'prop-types';
 import Spinner from "../components/spinner";
+import {Header} from "../App";
 
 export class Home extends Component {
     componentWillReceiveProps(nextProps, nextContext){
@@ -30,13 +31,17 @@ export class Home extends Component {
 
     render() {
         return (
-            <div className="container">
-                <LeftDiv
-                    createRide={this.props.createRide}
-                    unSetRideCreation={this.props.unSetRideCreation}
-                    createError={this.props.createError}
-                />
-                <RightDiv  requestRideJoin={this.props.requestRideJoin} rides={this.props.rides} isFetching={this.props.isFetching}/>
+            <div>
+                <Header />
+                <div className="container">
+
+                    <LeftDiv
+                        createRide={this.props.createRide}
+                        unSetRideCreation={this.props.unSetRideCreation}
+                        createError={this.props.createError}
+                    />
+                    <RightDiv  requestRideJoin={this.props.requestRideJoin} rides={this.props.rides} isFetching={this.props.isFetching}/>
+                </div>
             </div>
         );
     }

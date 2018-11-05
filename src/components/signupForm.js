@@ -21,7 +21,7 @@ export class SignUpForm extends Component {
     handleSignUp =async (data)=>{
         await this.props.handleSignUp(data);
         if (this.props.isLogged){
-            this.props.history.push("/");
+            this.props.history.push("/home");
             this.props.history.go();
         }
     };

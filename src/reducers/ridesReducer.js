@@ -5,7 +5,10 @@ import {
     FETCH_RIDES,
     FETCH_RIDE,
     FETCHING,
-    REQUEST_JOIN
+    REQUEST_JOIN, MY_TRIPS,
+    FETCHING_TRIP_REQUESTS,
+    CURRENT_RIDE,
+    MY_REQUESTS, TRIP_REQUESTS, MY_TRIPS_ERROR
 } from "../actions/types";
 
 export const initialState = {
@@ -15,10 +18,51 @@ export const initialState = {
     createError:"",
     isFetching: false,
     setJoin:false,
+    myTrips:[],
+    myRequests:[],
+    fetchingTripRequests:false,
+    currentRide:'',
+    currentTripRequests:[],
 };
 
 const ridesReducer=(state=initialState,action)=>{
     switch (action.type) {
+        case FETCHING_TRIP_REQUESTS:
+            return{
+                ...state,
+                fetchingTripRequests: action.payload,
+            };
+
+        case CURRENT_RIDE:
+            return{
+                ...state,
+                currentRide: action.payload,
+            };
+
+        case MY_TRIPS:
+            return {
+                ...state,
+                myTrips: action.payload
+            };
+
+        case MY_REQUESTS:
+            return {
+                ...state,
+                myRequests: action.payload
+            };
+
+        case TRIP_REQUESTS:
+            return {
+                ...state,
+                currentTripRequests: action.payload,
+            };
+
+        case MY_TRIPS_ERROR:
+            return {
+                ...state,
+                tripsError: action.payload,
+            };
+
         case CREATE_RIDE:
             return {
                 ...state,

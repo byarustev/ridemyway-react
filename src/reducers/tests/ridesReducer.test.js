@@ -1,12 +1,12 @@
 import ridesReducer, {initialState} from "../ridesReducer";
 import {
     CREATE_RIDE,
-    CREATE_RIDE_ERROR,
+    CREATE_RIDE_ERROR, CURRENT_RIDE,
     FETCH_RIDE,
     FETCH_RIDE_ERROR,
     FETCH_RIDES,
-    FETCHING,
-    LOGIN_USER
+    FETCHING, FETCHING_TRIP_REQUESTS,
+    LOGIN_USER, MY_REQUESTS, MY_TRIPS, MY_TRIPS_ERROR, REQUEST_JOIN, TRIP_REQUESTS
 } from "../../actions/types";
 
 describe('rides reducer', () => {
@@ -81,6 +81,78 @@ describe('rides reducer', () => {
         beforeState.ride={id:1,from:'from'};
         expect(afterState).toEqual(beforeState);
     });
+
+    it('handles setting fetch requests ', () => {
+        const action = {
+            type: FETCHING_TRIP_REQUESTS,
+            payload: true,
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.fetchingTripRequests=true;
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting CURRENT_RIDE ', () => {
+        const action = {
+            type: CURRENT_RIDE,
+            payload: 2,
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.currentRide=2;
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting MY_TRIPS ', () => {
+        const action = {
+            type: MY_TRIPS,
+            payload: [{id:1}],
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.myTrips=[{id:1}];
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting MY_REQUESTS ', () => {
+        const action = {
+            type: MY_REQUESTS,
+            payload: [{id:1}],
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.myRequests=[{id:1}];
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting TRIP_REQUESTS ', () => {
+        const action = {
+            type: TRIP_REQUESTS,
+            payload: [{id:1}],
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.currentTripRequests=[{id:1}];
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting REQUEST_JOIN ', () => {
+        const action = {
+            type: REQUEST_JOIN,
+            payload: true,
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.setJoin=true;
+        expect(afterState).toEqual(beforeState);
+    });
+
+    it('handles setting MY_TRIPS_ERROR ', () => {
+        const action = {
+            type: MY_TRIPS_ERROR,
+            payload: "error",
+        };
+        const afterState = ridesReducer(beforeState, action);
+        beforeState.tripsError="error";
+        expect(afterState).toEqual(beforeState);
+    });
+
+
 
 
 });

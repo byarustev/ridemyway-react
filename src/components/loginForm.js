@@ -23,7 +23,7 @@ export class LoginForm extends Component {
     handleLogin = async (data) => {
         await this.props.handleLogin(data);
         if (this.props.isLogged){
-            this.props.history.push("/");
+            this.props.history.push("/home");
             this.props.history.go();
         }
     };
